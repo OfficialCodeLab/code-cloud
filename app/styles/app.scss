@@ -1,0 +1,12 @@
+
+//App.scss
+
+
+@import "bootstrap";
+@import 'foundation';
+@include foundation-everything;
+@import "_color-definitions";
+
+$color-primary: $palette-teal-500;
+$color-accent: $palette-pink-A200;
+@import 'material-design-lite';
