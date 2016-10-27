@@ -13,6 +13,9 @@ module.exports = function(environment) {
       storageBucket: "code-cloud-7573f.appspot.com",
       messagingSenderId: "642153252567"
     },
+    torii: {
+      sessionServiceName: 'session'
+    },
 
     // if using ember-cli-content-security-policy
     // contentSecurityPolicy: {

@@ -1,6 +1,31 @@
-{{partial 'navbar'}}
+
+{{#if session.isAuthenticated}}  
+	{{#mdl-nav title='CodeCloud' scrollHeader=true}}
+	  {{mdl-nav-item name='Home'   route='index'}}
+	  {{mdl-nav-item name='About'   route='about'}}
+	  {{mdl-nav-item name='Log out'   route='logout'}}
+	  
+	  <div class="mdl-grid">
+	  	<div class="mdl-cell mdl-cell--12-col">
+			{{outlet}}
+	  	</div>
+	  </div>
+	{{/mdl-nav}}
 
 
-<div style="padding-top: 80px;">
-{{outlet}}
-</div>
+{{else}}
+	{{#mdl-nav title='CodeCloud' scrollHeader=true}}
+	  {{mdl-nav-item name='Home'   route='index'}}
+	  {{mdl-nav-item name='About'   route='about'}}
+	  {{mdl-nav-item name='Log in'   route='login'}}
+	  
+	  <div class="mdl-grid">
+	  	<div class="mdl-cell mdl-cell--12-col">
+			{{outlet}}
+			
+			{{firebase-ui-auth signInSuccess=(action 'signInSuccess')}}
+	  	</div>
+	  </div>
+	{{/mdl-nav}}
+{{/if}}
+
